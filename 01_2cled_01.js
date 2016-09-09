@@ -59,7 +59,7 @@ var   rpio        = require('rpio');
 //|   Original program wires red led to GPIO 0 pin (physical pin 11) and the
 //|   green led is wired to GPIO 1 pin (phys. pin 12). Since I will use hardware
 //|   PWM, I should choose GPIO pins that pupport PWM so I will use the GPIO 1 
-//|   (phys. 12) for the red led and GPIO 24 (phys. 33) for the green led.
+//|   (phys. 12) for the red led and GPIO 24 (phys. 35) for the green led.
 //|
 //|   Here is a description of the PWM enabled pins:
 //|
