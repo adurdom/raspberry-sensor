@@ -1,0 +1,8 @@
+{
+   "name": "sensorkit",
+   "version": "0.0.1",
+   "description": "Re-coding in JavaScript of SunFounder C code",
+   "dependencies": {
+      "rpio": "^0.9.11"
+   }
+}
