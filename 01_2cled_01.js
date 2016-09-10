@@ -56,6 +56,21 @@ var   rpio        = require('rpio');
 //+-----------------------------------------------------------------------------
 
 //|   Pins to use:
+//|
+//|          +------------------------------------------+
+//|      (6) |                                          |
+//|          |     +-------------------------------+    |    
+//|          |     | (12)                          |    |    
+//|    +-----|-----|-----------------------------+ |    | GND  +-----+
+//|    | o o x o o x o o o o o o o o o o o o o o | | R  +------+     |
+//|    | o o o o o o o o o o o o o o o o o x o o | +-----------+  O  |
+//|    +-----------------------------------|-----+      +------+     |
+//|                                        | (35)     G |      +-----+
+//|                                        +------------+    
+//|
+//|   Red:     Physical 12 (GPIO 1)
+//|   Green:   Physical 35 (GPIO 24)
+//|
 //|   Original program wires red led to GPIO 0 pin (physical pin 11) and the
 //|   green led is wired to GPIO 1 pin (phys. pin 12). Since I will use hardware
 //|   PWM, I should choose GPIO pins that pupport PWM so I will use the GPIO 1 
@@ -80,7 +95,7 @@ const PIN_GREEN      = 35;
 
 const CLOCK_DIVIDER  = 8;     // 19.2 / 8 = 2.4 MHz
 const RANGE          = 1024;
-const MAX_BRIGHTNESS = 512;
+const MAX_BRIGHTNESS = 256;
 
 //|   EXECUTIONS
 //|   Number of executions in the loop.
@@ -123,7 +138,9 @@ var red_brightness;
 var green_brightness;
 
 for (var i = 0; i < EXECUTIONS; i++) {
-   
+
+   console.log("Iteration: " + i);
+      
    //|   Red ...
    
    red_brightness    = MAX_BRIGHTNESS;
